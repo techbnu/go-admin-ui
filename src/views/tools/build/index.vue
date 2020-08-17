@@ -1,14 +1,24 @@
 <template>
-  <div v-loading="loading" :style="'height:'+ height">
-    <iframe :src="src" frameborder="no" style="width: 100%;height: 100%" scrolling="auto" />
-  </div>
+  <BasicLayout>
+    <template #wrapper>
+      <el-card class="box-card">
+        <div v-loading="loading" :style="'height:'+ height">
+          <iframe :src="src" frameborder="no" style="width: 100%;height: 100%" scrolling="auto" />
+        </div>
+      </el-card>
+    </template>
+  </BasicLayout>
 </template>
+
 <script>
+
 export default {
-  name: 'Build',
+  components: {
+
+  },
   data() {
     return {
-      src: process.env.VUE_APP_BASE_API + '/form-generator',
+      src: process.env.VUE_APP_BASE_API + '/form-generator/index.html',
       height: document.documentElement.clientHeight - 94.5 + 'px;',
       loading: true
     }

@@ -64,6 +64,7 @@ export function toProjectTable(tableId) {
     method: 'get'
   })
 }
+
 export function toProjectTableCheckRole(tableId, ischeckrole) {
   return request({
     url: '/api/v1/gen/toproject/' + tableId + '?ischeckrole=' + ischeckrole,
@@ -78,4 +79,3 @@ export function toDBTable(tableId) {
     method: 'get'
   })
 }
-
